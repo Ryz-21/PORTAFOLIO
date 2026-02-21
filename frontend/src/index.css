@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+}
+
+@layer base {
+
+  html,
+  body,
+  #root {
+    @apply h-full w-full overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-brand-white text-brand-black transition-colors duration-500;
+  }
+
+  html.dark body {
+    @apply bg-brand-black text-brand-white;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply relative font-bold uppercase tracking-widest text-sm transition-all duration-300;
+  }
+
+  .nav-item::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300;
+  }
+
+  .nav-item:hover::after {
+    @apply w-full;
+  }
+
+  .btn-alive {
+    @apply px-6 py-2 border-2 border-current font-black uppercase tracking-tighter hover:bg-brand-black hover:text-brand-white dark:hover:bg-brand-white dark:hover:text-brand-black transition-all active:scale-95;
+  }
+}
+
+@layer utilities {
+  .animate-reveal {
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
