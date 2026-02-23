@@ -28,7 +28,9 @@ export default function Contacto() {
       <h2 className="text-5xl font-black uppercase mb-8">Contacto</h2>
       <form className="space-y-6" onSubmit={handleSubmit}>
         <input
-          className="w-full p-4 border-2 border-black dark:border-white bg-transparent font-bold outline-none"
+          className="w-full p-4 border-2 border-black dark:border-white 
+             bg-transparent font-bold outline-none 
+             text-black dark:text-gray-400 placeholder-black dark:placeholder-gray-500"
           placeholder="Nombre"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -36,7 +38,9 @@ export default function Contacto() {
         />
         <input
           type="email"
-          className="w-full p-4 border-2 border-black dark:border-white bg-transparent font-bold outline-none"
+          className="w-full p-4 border-2 border-black dark:border-white 
+             bg-transparent font-bold outline-none 
+             text-black dark:text-gray-400 placeholder-black dark:placeholder-gray-500"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -44,7 +48,9 @@ export default function Contacto() {
         />
         <textarea
           rows="5"
-          className="w-full p-4 border-2 border-black dark:border-white bg-transparent font-bold outline-none"
+          className="w-full p-4 border-2 border-black dark:border-white 
+             bg-transparent font-bold outline-none 
+             text-black dark:text-gray-400 placeholder-black dark:placeholder-gray-500"
           placeholder="Mensaje"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
